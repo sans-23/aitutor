@@ -1,11 +1,19 @@
 package lld.problems.BookMyShow.sanskar;
 
-public class Movie {
-    String name;
-    String desciption;
+import java.util.UUID;
 
-    Movie(String name, String description){
+public class Movie {
+    String id;
+    String name;
+    String description;
+    String genre;
+    String language;
+
+    Movie(String name, String description, String genre, String language){
+        this.id = UUID.randomUUID().toString();
         this.name = name;
-        this.desciption = description;
+        this.description = description;
+        this.genre = genre;
+        this.language = language;
     }
 }
