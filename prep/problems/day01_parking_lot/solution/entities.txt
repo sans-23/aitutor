@@ -1,0 +1,72 @@
+Entities
+
+Parking Lot
+    Attributes
+        - List<Floor> floors;
+        - List<Gate> entryGates;
+        - List<Gate> exitGates;
+        
+ParkingSlot
+    Attributes
+        - id
+        - vehicleType
+        - isOccupied (Atomic boolean) // no synchonised boolean(as it is slow), no concurrentLinkedQueue, as for simple var, we can use hardware levl Atomic values, simple fast and predictable
+
+Floor
+    Attributes
+        - floorNumber
+        - List<ParkingSlot> slots;
+
+EntryGate
+    Attributes
+        - id
+        
+ExitGates   
+    Attributes
+        - id
+
+VehicleType
+    enum
+        - TWO_WHEELER
+        - COMPACT
+        - LARGE
+        - HEAVY
+
+Vehicle
+    Attributes
+        - vehicleType
+        - licensePlate
+
+ParkingTicket
+    Attributes
+        - ticketId
+        - licensePlate
+        - vehicleType
+        - allocatedSlotId
+        - entryTime
+
+PaymentReceipt
+    Attributes
+        - ticketId
+        - licensePlate
+        - vehicleType
+        - allocatedSlotId
+        - entryTime
+        - exitTime
+        - totalFee
+
+ParkingLotService
+    Attributes
+        - slotAllocationStrategy
+        - pricingStrategy
+        - vehicleParkingMap
+
+SlotAllocationStrategy
+    Methods
+        - allocate() : Optional<ParkingSlot>
+        - deallocate(slotId) : void
+
+PricingStrategy
+    Methods
+        - calculateFee(VehicleType type, duration) : double
+
