@@ -8,10 +8,23 @@
 | :---: | :---: | :--- | :---: | :---: | :--- |
 | **00** | 2026-09-02 | **Notification Service + LRU Cache (Diagnostic)** | **6.5 / 10** | ⚠️ Needs Polish | **Good:** Fast prototyping, Strategy/Factory in place, LRU passed 100k stress test.<br>**Fatal Flaws:** Swallowed exceptions in executor, forgot thread shutdown, over-coupled User entity, un-decremented counter in LRU. |
 | **01** | 2026-09-03 | **Parking Lot / Multi-Floor Garage** | **9.5 / 10** | 🏆 Strong Hire | **Good:** Hardware CAS via `AtomicBoolean`, Strategy pattern for allocation and pricing, clean records, zero double-booking under concurrent test.<br>**Watch Outs:** Initial short-circuit ordering bug in CAS evaluation, initial async race before `awaitTermination`. |
+| **02** | 2026-09-05 | **Concert Ticket Booking (BookMyShow)** | **9.7 / 10** | 🏆 Strong Hire | **Good:** Pure State Pattern (`AvailableState`, `HoldState`, `BookState`), TTL expiration tested, synchronized state transitions, zero double-booking.<br>**Takeaway:** State-specific data belongs in state objects, eliminate dual-source-of-truth. |
 
 ---
 
 ## 📝 Detailed Session Notes
+
+### Day 02 Session (2026-09-05)
+- **Problem:** Concert & Movie Ticket Booking System (BookMyShow)
+- **Score:** 9.7 / 10 (Strong Hire)
+- **Design Pattern Mastered:** The **State Pattern** (GoF)
+- **Breakdown:**
+  - *Requirements Coverage (2.0/2.0):* All lifecycle flows completed: seat hold, booking confirmation, hold collision rejection, and TTL expiration re-claim.
+  - *Clean Architecture & Patterns (2.0/2.0):* Textbook State Pattern (`AvailableState`, `HoldState`, `BookState`). Zero switch-case anti-patterns.
+  - *SOLID & Extensibility (2.0/2.0):* Strict OCP and SRP compliance.
+  - *Concurrency & Thread Safety (1.9/2.0):* State transitions synchronized per `Seat`. Atomically isolated.
+  - *Code Craftsmanship (1.8/2.0):* Working `main()` harness with try-catch demonstrating positive, negative, and TTL timeout scenarios.
+- **Key Breakthrough:** Conquered the "Dual Source of Truth" trap by keeping state-specific data (`heldBy`, `expiryTimeStamp`) inside `HoldState` rather than polluting `Seat`.
 
 ### Day 01 Session (2026-09-03 / 2026-09-04)
 - **Problem:** Multi-Floor Smart Parking Lot System

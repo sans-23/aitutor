@@ -31,6 +31,6 @@
 
 ## 📈 Conquered Vulnerabilities
 *(Items move here once candidate passes 2 consecutive problems without exhibiting the flaw)*
-- **WP-01** (Drilled & corrected in Day 01 — 1 consecutive pass)
-- **WP-02** (Drilled & corrected in Day 01 — 1 consecutive pass)
-- **WP-03** (Drilled & corrected in Day 01 — 1 consecutive pass)
+- 🏆 **WP-01: Silent Exception Swallowing in Concurrency** (Passed Day 01 & Day 02 cleanly)
+- 🏆 **WP-02: Non-Daemon Thread Hangs / Lifecycle Leaks** (Passed Day 01 & Day 02 cleanly)
+- 🏆 **WP-03: Unbalanced State Counters** (Passed Day 01 & Day 02 cleanly)
