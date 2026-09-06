@@ -1,0 +1,70 @@
+<mxfile host="65bd71144e">
+    <diagram id="-HQ1BPW1Vd9rniDOj6pF" name="Page-1">
+        <mxGraphModel dx="562" dy="521" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="38" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="2" target="10">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="Client&lt;br&gt;- clientId" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="635" y="280" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="3" target="10">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="API&lt;br&gt;- apiID&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="635" y="70" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="RateLimiterService&lt;br&gt;- Map&amp;lt;Client, RateLimiter&amp;gt; rateLimiters&lt;br&gt;- Map&amp;lt;Client, Quota&amp;gt; quotas&lt;br&gt;- acceptRequest(Request" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="425" y="150" width="166" height="145" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="7" target="2">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="Tier&lt;br&gt;- Free&lt;br&gt;- Pro&lt;br&gt;- Enterprise" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="625" y="390" width="140" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="9" target="13">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="9" target="39">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="9" target="36">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="RateLimiter&lt;br&gt;&amp;nbsp;(interface)&lt;br&gt;-allowRequest(tokens)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="115" y="187.5" width="140" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.995;entryY=0.46;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="10" target="5">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="Request&lt;br&gt;- timestamp&lt;br&gt;- apiID&lt;br&gt;-clientId" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="635" y="180" width="120" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="SlidingWindowRateLimiter" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="110" y="310" width="150" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="22" target="5">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.449;entryY=0.994;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="22" target="39">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="Quota&lt;br&gt;- clientId&lt;br&gt;- apiID&lt;br&gt;- tokens" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="428" y="320" width="160" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="TokenBucketRateLimiter" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="105" y="70" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="39" target="5">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="RateLimiterFactory&lt;br&gt;(Quota)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="285" y="192.5" width="120" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
